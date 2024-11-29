@@ -1,0 +1,151 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar Style */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4b0606;
+  padding: 10px 20px;
+  color: goldenrod;
+}
+
+
+.navbar-button a:hover {
+  color: goldenrod
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+
+
+.nav-links li {
+  margin-right: 15px;
+}
+
+.nav-links a {
+  color: goldenrod;
+  text-decoration: none;
+  font-size: 20px;
+  padding-right: 20px;
+}
+
+.nav-links a:hover {
+  color: whitesmoke;
+}
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-search input {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: goldenrod 2px solid;
+  margin-right: 10px;
+  background: goldenrod;
+}
+
+.navbar-search button {
+  padding: 8px 16px;
+  background-color: goldenrod;
+  color: black;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navbar-search button:hover {
+  background-color: whitesmoke;
+}
+
+.content {
+  flex: 1; /* Pushes footer to the bottom */
+  padding: 20px;
+  text-align: center;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #f8f9fa;
+  padding: 10px;
+  text-align: center;
+  color: #6c757d;
+  font-size: 14px;
+  border-top: 1px solid #e9ecef;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+
+/* Card styles */
+
+#Bookh1 {
+  text-align: center;
+  padding: 30px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  padding: 20px;
+  text-align: center;
+  place-items: center;
+  display: grid;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  transition: .5s;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+.card img {
+  object-fit: cover;
+  max-width: 100%;
+  height: 500px;
+  border-radius: 8px 8px 0 0;
+  border: 2px solid #f12b2b;
+}
+.card h3 {
+  font-size: 1.5em;
+  margin: 15px 0;
+  color: #333;
+}
+.card p {
+  font-size: 1em;
+  color: #555;
+}
+.card button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.card button:hover {
+  background-color: #0056b3;
+}

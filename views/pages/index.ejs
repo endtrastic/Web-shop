@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../partials/header'); %>
+</header>
+
+<main>
+  <h1 id="Bookh1">Book List
+    <hr>
+  </h1>
+  <div class="card-container">
+    <% books.forEach(book => { %>
+    <div class="card">
+        <!-- Add an image placeholder if no image URL exists in your database -->
+        <img src="<%= book.imageUrl %>" alt="<%= book.title || 'Book Image' %>">
+        <p><strong>Author:</strong> <%= book.author %></p>
+        <p><strong>Price:</strong> $<%= book.price %></p>
+        <p><strong>Description: </strong><%= book.description %></p>
+        <button>Buy Now</button>
+    </div>
+    <% }) %>
+  </div>
+</main>
+
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+#  Probably wont need to add these to Github repo
+
+node_modules/
+package-lock.json/
+package.json/
