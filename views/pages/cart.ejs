@@ -10,12 +10,16 @@
 </header>
 
 <main>
-  <h1 id="Bookh1">Shopping cart
-    <hr>
-  </h1>
-  <div class="icon-container">
-    <i class="fa-solid fa-cart-shopping"></i>
-  </div>
+  <% if (cart && cart.length > 0) { %>
+      <h2>Your Cart</h2>
+      <ul>
+          <% cart.forEach(item => { %>
+              <li>Book ID: <%= item %></li>
+          <% }); %>
+      </ul>
+  <% } else { %>
+      <p>Your cart is empty.</p>
+  <% } %>
 </main>
 
 <footer>

@@ -16,12 +16,11 @@
   <div class="card-container">
     <% books.forEach(book => { %>
     <div class="card">
-        <!-- Add an image placeholder if no image URL exists in your database -->
         <img src="<%= book.imageUrl %>" alt="<%= book.title || 'Book Image' %>">
         <p><strong>Author:</strong> <%= book.author %></p>
         <p><strong>Price:</strong> $<%= book.price %></p>
         <p><strong>Description: </strong><%= book.description %></p>
-        <button>Add to cart</button>
+        <button class="add-to-cart" data-id="<%= book.id %>">Add to cart</button>
     </div>
     <% }) %>
   </div>
@@ -30,6 +29,33 @@
 <footer>
   <%- include('../partials/footer'); %>
 </footer>
+
+<script>
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const bookId = button.dataset.id;
+
+                console.log(bookId); // Check if the bookId is being logged correctly
+
+                fetch('/cart/add-to-cart', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ id: bookId }), 
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Book added successfully');
+                    } else {
+                        console.error('Failed to add book');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+            });
+        });
+
+</script>
 
 </body>
 </html>
