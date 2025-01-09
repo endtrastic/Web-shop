@@ -37,11 +37,9 @@
 <script>
 document.querySelectorAll('.add-to-cart').forEach(button => {
     button.addEventListener('click', () => {
-        const bookAuthor = button.dataset.author;
+        const bookAuthors = button.dataset.author;
         const bookTitle = button.dataset.title;
         const bookPrice = button.dataset.price;
-
-        console.log(`Author: ${bookAuthor}, Title: ${bookTitle}, Price: ${bookPrice}`);
 
         fetch('/cart/add-to-cart', {
             method: 'POST',
@@ -49,7 +47,7 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ 
-                author: bookAuthor,
+                author: bookAuthors,
                 title: bookTitle,
                 price: bookPrice
             }), 

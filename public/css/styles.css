@@ -158,3 +158,27 @@ i {
   font-size: 25em;
   opacity: 0.45;
 }
+
+
+/* Remove button CSS */
+.remv {
+  font-size: 20px;
+  background-color: inherit;
+  border: 1px solid #4d0808;
+  border-radius: 15px ;
+  float: right;
+}
+
+.remv:hover {
+  background-color: rgb(145, 31, 31);
+}
+
+.check{
+  font-size: 20px;
+  background-color: inherit;
+  border: 1px solid #4d0808;
+  border-radius: 15px;
+}
+
+
+/* Checkout button CSS */

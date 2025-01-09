@@ -18,6 +18,10 @@
           <li><strong>Book Name:</strong> <%= item.bookTitle %></li>
           <li><strong>Author:</strong> <%= item.bookAuthor %></li>
           <li><strong>Price:</strong> $<%= item.bookPrice %></li>
+          <li><strong>Quantity:</strong> <%= item.bookQuantity %></li>
+          <li><strong>Subtotal:</strong> $<%= item.bookQuantity * item.bookPrice %></li>
+          <button class="remv" data-index="<%= index %>">Remove</button>
+          <button class="check">Checkout</button>
           <hr>
         <% }); %>
       </ul>
@@ -31,6 +35,15 @@
 <footer>
   <%- include('../partials/footer'); %>
 </footer>
-<script src="https://kit.fontawesome.com/a8cfb27db5.js" crossorigin="anonymous"></script>
+<script>
+document.querySelectorAll('.check').forEach(button => {
+    button.addEventListener('click', () => {
+        window.location.assign('/contact.html');
+    });
+});
+
+
+
+</script>
 </body>
 </html>
