@@ -23,7 +23,6 @@ function writeCartData(cartData) {
 
 
 
-
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/cart', CartRoutes);   

@@ -3,21 +3,28 @@ const router = express.Router();
 
 let cartItems = []; // You can also import this from your main app if needed
 
+// POST route to add book to cart
 router.post('/add-to-cart', (req, res) => {
-    const bookId = req.body.id;
+    // Extract data from request body
+    const bookPrice = req.body.price;    
+    const bookAuthor = req.body.author;  
+    const bookTitle = req.body.title;    
 
-    if (!bookId) {
-        return res.status(400).send('Book ID is required');
+    console.log(`Received book: Author: ${bookAuthor}, Title: ${bookTitle}, Price: ${bookPrice}`);
+
+    // Check if all necessary data is present
+    if (!bookPrice || !bookAuthor || !bookTitle) {
+        return res.status(400).send('Missing book details');
     }
 
-    if (cartItems.includes(bookId)) {
-        return res.status(400).send('Book is already in the cart');
-    }
+    // Add to cart
+    cartItems.push({ bookPrice, bookAuthor, bookTitle });
 
-    console.log(`Book ID ${bookId} added to cart`);
-    cartItems.push(bookId);
     res.status(200).send('Book added to cart');
 });
+
+module.exports = router;
+
 
 // Route to display the cart
 router.get('/', (req, res) => {

@@ -13,14 +13,20 @@
   <% if (cart && cart.length > 0) { %>
       <h2>Your Cart</h2>
       <ul>
-          <% cart.forEach(item => { %>
-              <li>Book ID: <%= item %></li>
-          <% }); %>
+        <% cart.forEach(item => { %>
+          <hr>
+          <li><strong>Book Name:</strong> <%= item.bookTitle %></li>
+          <li><strong>Author:</strong> <%= item.bookAuthor %></li>
+          <li><strong>Price:</strong> $<%= item.bookPrice %></li>
+          <hr>
+        <% }); %>
       </ul>
   <% } else { %>
       <p>Your cart is empty.</p>
   <% } %>
 </main>
+
+
 
 <footer>
   <%- include('../partials/footer'); %>
